@@ -52,8 +52,10 @@ export default function Event({ data }) {
                 
                 <img src={data.assets.bgMountain} alt="bg-mountain" className="absolute top-20 left-0 w-full opacity-40 pointer-events-none" />
 
-                {/* Card Akad */}
-                <div data-aos="fade-up" className="bg-white/95 backdrop-blur-sm text-navy rounded-[2.5rem] p-10 mb-12 relative z-20 shadow-xl border border-white/80 overflow-hidden">
+                {/* Cards Wrapper */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto relative z-10 mt-12">
+                    {/* Card Akad */}
+                    <div data-aos="fade-up" className="bg-white/95 backdrop-blur-sm text-navy rounded-[2.5rem] p-10 relative shadow-xl border border-white/80 overflow-hidden h-full flex flex-col justify-between">
                     {/* Ornaments */}
                     {data.assets.ornamentCloud && (
                         <>
@@ -128,6 +130,7 @@ export default function Event({ data }) {
                     <button className="bg-navy text-white text-xs px-6 py-3 rounded-full shadow-md hover:bg-opacity-90 flex items-center justify-center gap-2 mx-auto transition">
                         <MapPin size={14} /> Lokasi Acara
                     </button>
+                </div>
                 </div>
             </div>
         </section>

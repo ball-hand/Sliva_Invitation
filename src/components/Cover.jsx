@@ -8,10 +8,10 @@ export default function Cover({ data, isCoverOpen, setIsCoverOpen }) {
         >
             <img src={data.assets.cover} alt="cover" className="absolute inset-0 w-full h-full object-cover z-0 opacity-60" />
             <div className="relative z-10 text-center px-6 w-full mt-auto">
-                <h3 className="font-serif tracking-widest text-xs mb-3 font-semibold drop-shadow-md">THE WEDDING OF</h3>
-                <h1 className="font-script text-7xl mb-12 drop-shadow-lg">{data.mempelai.panggilan}</h1>
-                <p className="text-sm mb-1 opacity-90 drop-shadow-md">Kepada Yth.</p>
-                <p className="font-bold text-xl mb-8 drop-shadow-md">{data.tamu}</p>
+                <h3 className="font-serif tracking-widest text-xs md:text-sm mb-3 font-semibold drop-shadow-md">THE WEDDING OF</h3>
+                <h1 className="font-script text-7xl md:text-8xl lg:text-9xl mb-12 drop-shadow-lg">{data.mempelai.panggilan}</h1>
+                <p className="text-sm md:text-base mb-1 opacity-90 drop-shadow-md">Kepada Yth.</p>
+                <p className="font-bold text-xl md:text-2xl mb-8 drop-shadow-md">{data.tamu}</p>
                 
                 <button 
                     onClick={() => setIsCoverOpen(true)} 

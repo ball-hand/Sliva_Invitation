@@ -30,7 +30,7 @@ export default function LoveStory({ data }) {
                     <span className="font-script text-navy text-6xl absolute top-6 left-1/2 transform -translate-x-1/2">Story</span>
                 </div>
 
-                <div className="space-y-8 mt-16">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 mt-16 max-w-5xl mx-auto">
                     {data.love_story.map((story, idx) => {
                         const isEven = idx % 2 === 1;
                         return (

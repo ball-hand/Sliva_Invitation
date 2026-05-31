@@ -90,7 +90,7 @@ export default function App() {
 
     return (
         <div className="min-h-screen bg-gray-200 flex justify-center w-full relative">
-            <div className={`w-full max-w-[480px] bg-bg-light relative shadow-2xl font-sans text-navy antialiased ${!isCoverOpen ? 'overflow-hidden h-screen' : 'overflow-x-hidden min-h-screen'}`}>
+            <div className={`w-full max-w-md md:max-w-3xl lg:max-w-5xl bg-bg-light relative shadow-2xl font-sans text-navy antialiased ${!isCoverOpen ? 'overflow-hidden h-screen' : 'overflow-x-hidden min-h-screen'}`}>
                 
                 
 

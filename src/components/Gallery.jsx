@@ -13,7 +13,7 @@ export default function Gallery({ data }) {
             
             <div className="relative z-10">
                 <h2 className="font-serif text-4xl text-gold mb-12" data-aos="fade-down">GALERI<br/><span className="font-script text-navy text-6xl -mt-4 block">Foto</span></h2>
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 max-w-6xl mx-auto">
                     {data.galeri.map((item, idx) => (
                         <div 
                             key={idx} 
