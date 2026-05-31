@@ -39,25 +39,25 @@
             "id": 1,
             "title": "Awal Pertemuan",
             "content": "Kami pertama kali dipertemukan Allah pada bulan Mei 2024. Awalnya hanya obrolan biasa, tapi ternyata itu awal dari segalanya...",
-            "image": "/assets/photo_gallery_1_1780203133189.png"
+            "image": "/assets/cust/awal Pertemuan.jpeg"
         },
         {
             "id": 2,
             "title": "Masa Pendekatan",
             "content": "PDKT kami nggak neko-neko. Justru lucunya, kami jadi dekat gara-gara hal kecil yang sering bikin ketawa bareng. Dari saling \"nge-ghosting\" bales chat lama, sampai berantem rebutan hal kecil. Siapa sangka dari hal receh itu, kami jadi saling nyaman dan saling mengerti.",
-            "image": "/assets/photo_gallery_2_1780203148601.png"
+            "image": "/assets/cust/Tunangan.jpeg"
         },
         {
             "id": 3,
             "title": "Lamaran",
             "content": "Pada tanggal 05 April 2025, Dia memberanikan diri datang ke rumah membawa restu. Di hadapan keluarga, kami mengikat janji untuk melangkah ke jenjang yang lebih serius. Bismillah, ini awal komitmen kami.",
-            "image": "/assets/photo_cover_1780203057925.png"
+            "image": "/assets/cust/Tunangan2.jpeg"
         },
         {
             "id": 4,
             "title": "Menuju Pernikahan",
             "content": "Kami percaya bahwa pernikahan adalah jalan yang diridhoi untuk membawa kami pada hal-hal baik. Semoga dengan menikah, kami dapat mewujudkan segala mimpi dan cita-cita bersama, saling menggandeng tangan, dan saling menguatkan.",
-            "image": "/assets/photo_hero_1780203074146.png"
+            "image": "/assets/cust/WhatsApp Image 2026-05-31 at 14.36.42.jpeg"
         }
     ],
     "live_streaming": {
@@ -70,14 +70,26 @@
     "music": "/assets/Nyoman Paul, Andi Rianto  The Way You Look At Me (Official Music Video).mp3",
     "quotes": "Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung dan merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa kasih dan sayang. Sungguh, pada yang demikian itu benar-benar terdapat tanda-tanda (kebesaran Allah) bagi kaum yang berpikir.\n\n~ Ar - Rum:21 ~",
     "galeri": [
-        { "src": "/assets/photo_gallery_1_1780203133189.png", "alt": "foto galeri 1" },
-        { "src": "/assets/photo_gallery_2_1780203148601.png", "alt": "foto galeri 2" },
-        { "src": "/assets/photo_cover_1780203057925.png", "alt": "foto galeri 3" },
-        { "src": "/assets/photo_hero_1780203074146.png", "alt": "foto galeri 4" }
+        {
+            "src": "/assets/cust/WhatsApp Image 2026-05-31 at 13.39.19.jpeg",
+            "alt": "foto galeri 1"
+        },
+        {
+            "src": "/assets/cust/WhatsApp Image 2026-05-31 at 13.39.20.jpeg",
+            "alt": "foto galeri 2"
+        },
+        {
+            "src": "/assets/cust/WhatsApp Image 2026-05-31 at 13.39.21.jpeg",
+            "alt": "foto galeri 3"
+        },
+        {
+            "src": "/assets/cust/WhatsApp Image 2026-05-31 at 13.39.23.jpeg",
+            "alt": "foto galeri 4"
+        }
     ],
     "assets": {
-        "cover": "/assets/photo_cover_1780203057925.png",
-        "hero": "/assets/photo_hero_1780203074146.png",
+        "cover": "/assets/cust/WhatsApp Image 2026-05-31 at 13.39.21.jpeg",
+        "hero": "/assets/cust/WhatsApp Image 2026-05-31 at 14.36.42.jpeg",
         "bgCity": "/assets/bg_city_watercolor_1780203018528.png",
         "bgMountain": "/assets/bg_mountain_watercolor_1780203042967.png"
     }

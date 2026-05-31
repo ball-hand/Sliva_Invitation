@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense } from 'react';
 import invitationDataJSON from './data/invitationData.json';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -13,7 +13,6 @@ import Gallery from './components/Gallery';
 import GiftAndWishes from './components/GiftAndWishes';
 import Closing from './components/Closing';
 import BottomNav from './components/BottomNav';
-import AdminCMS from './components/AdminCMS';
 import MusicPlayer from './components/MusicPlayer';
 
 export default function App() {
@@ -30,10 +29,14 @@ export default function App() {
         });
     }, []);
 
-    // Check hash for admin route
+    // Check hash for admin routes (Hanya di mode Development)
     useEffect(() => {
         const checkHash = () => {
-            setIsAdmin(window.location.hash === '#admin');
+            if (import.meta.env.DEV) {
+                setIsAdmin(window.location.hash === '#admin');
+            } else {
+                setIsAdmin(false); // Pastikan admin tertutup di production
+            }
         };
         checkHash();
         window.addEventListener('hashchange', checkHash);
@@ -56,12 +59,19 @@ export default function App() {
             // Refresh AOS because the layout expands from h-screen to full height
             setTimeout(() => {
                 AOS.refresh();
-            }, 500); // give it a little time for the CSS transition to reveal the layout
+            }, 500);
         }
     }, [isCoverOpen]);
 
-    if (isAdmin) {
-        return <AdminCMS data={invitationData} onSave={setInvitationData} />;
+    // Lazy load AdminCMS HANYA saat development & isAdmin true.
+    // Vite Tree-Shaking akan otomatis menghapus komponen ini saat npm run build.
+    if (import.meta.env.DEV && isAdmin) {
+        const AdminCMS = React.lazy(() => import('./components/AdminCMS'));
+        return (
+            <Suspense fallback={<div className="min-h-screen flex items-center justify-center font-sans">Memuat Super Admin...</div>}>
+                <AdminCMS data={invitationData} onSave={setInvitationData} />
+            </Suspense>
+        );
     }
 
     return (
