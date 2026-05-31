@@ -45,6 +45,18 @@ export default function App() {
         return () => window.removeEventListener('hashchange', checkHash);
     }, []);
 
+    // Dinamis nama tamu dari parameter URL (?to=Nama+Tamu)
+    useEffect(() => {
+        const urlParams = new URLSearchParams(window.location.search);
+        const tamuQuery = urlParams.get('to');
+        if (tamuQuery) {
+            setInvitationData(prev => ({
+                ...prev,
+                tamu: tamuQuery
+            }));
+        }
+    }, []);
+
     // Load custom fonts
     useEffect(() => {
         const link = document.createElement('link');

@@ -96,6 +96,21 @@ Jika undangan Anda sudah selesai diedit dan siap dibagikan ke tamu:
 
 ---
 
+## 💌 Cara Membagikan Undangan (Nama Tamu Dinamis)
+
+Anda **tidak perlu** mengedit kode atau JSON setiap kali ingin membagikan undangan ke tamu yang berbeda. Cukup gunakan parameter `?to=` di belakang *link website* Anda!
+
+Contoh: 
+- Jika link Anda adalah `https://undangan-saya.com`
+- Untuk mengirim ke **Bapak Budi**, bagikan *link* berikut:
+  `https://undangan-saya.com/?to=Bapak+Budi`
+- Untuk mengirim ke **Keluarga Cemara**, bagikan *link*:
+  `https://undangan-saya.com/?to=Keluarga+Cemara`
+
+Tulisan tamu di halaman sampul (Cover) akan **berubah secara otomatis** mengikuti *link* tersebut! (Gunakan tanda `+` atau `%20` sebagai spasi).
+
+---
+
 ## 📁 Struktur Folder Penting
 - `src/components/` : Berisi kepingan-kepingan kode penyusun undangan (Hero, Maps, Profil, dll).
 - `src/data/invitationData.json` : Pusat pengatur data Anda!
