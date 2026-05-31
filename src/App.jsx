@@ -9,9 +9,11 @@ import Profile from './components/Profile';
 import LoveStory from './components/LoveStory';
 import Event from './components/Event';
 import LiveStreaming from './components/LiveStreaming';
+import Maps from './components/Maps';
 import Gallery from './components/Gallery';
 import GiftAndWishes from './components/GiftAndWishes';
 import Closing from './components/Closing';
+import Footer from './components/Footer';
 import BottomNav from './components/BottomNav';
 import MusicPlayer from './components/MusicPlayer';
 
@@ -77,17 +79,34 @@ export default function App() {
     return (
         <div className="min-h-screen bg-gray-200 flex justify-center w-full relative">
             <div className={`w-full max-w-[480px] bg-bg-light relative shadow-2xl font-sans text-navy antialiased ${!isCoverOpen ? 'overflow-hidden h-screen' : 'overflow-x-hidden min-h-screen'}`}>
+                
+                
+
                 <Cover data={invitationData} isCoverOpen={isCoverOpen} setIsCoverOpen={setIsCoverOpen} />
                 
-                <div className={`w-full bg-white transition-opacity duration-1000 ${isCoverOpen ? 'opacity-100' : 'opacity-0'}`}>
-                    <Hero data={invitationData} />
-                    <Profile data={invitationData} />
-                    <LoveStory data={invitationData} />
-                    <Event data={invitationData} />
-                    <LiveStreaming data={invitationData} />
-                    <Gallery data={invitationData} />
-                    <GiftAndWishes data={invitationData} />
-                    <Closing data={invitationData} />
+                <div className={`w-full bg-white relative z-10 transition-opacity duration-1000 ${isCoverOpen ? 'opacity-100' : 'opacity-0'}`}>
+                    
+                    {/* Hero Section (Cover) - Tampil murni di atas overlay */}
+                    <div className="relative z-50 bg-white">
+                        <Hero data={invitationData} />
+                    </div>
+
+                    {/* Main Content */}
+                    <div className="relative w-full">
+                        {/* Content Elements */}
+                        <div className="relative z-10 w-full">
+                            {invitationData.visibility?.profile !== false && <Profile data={invitationData} />}
+                            {invitationData.visibility?.love_story !== false && <LoveStory data={invitationData} />}
+                            {invitationData.visibility?.event !== false && <Event data={invitationData} />}
+                            {invitationData.visibility?.maps !== false && <Maps data={invitationData} />}
+                            {invitationData.visibility?.live_streaming !== false && <LiveStreaming data={invitationData} />}
+                            {invitationData.visibility?.gallery !== false && <Gallery data={invitationData} />}
+                            {invitationData.visibility?.wishes !== false && <GiftAndWishes data={invitationData} />}
+                            <Closing data={invitationData} />
+                            <Footer />
+                        </div>
+                    </div>
+
                     <BottomNav />
                     <MusicPlayer data={invitationData} isCoverOpen={isCoverOpen} />
                 </div>

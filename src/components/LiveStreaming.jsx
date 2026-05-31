@@ -18,9 +18,9 @@ export default function LiveStreaming({ data }) {
                 </a>
                 
                 <div className="text-left inline-block font-serif text-sm italic opacity-90 space-y-2">
-                    <p>Instagram : {data.live_streaming.instagram}</p>
-                    <p>TikTok : {data.live_streaming.tiktok}</p>
-                    <p>Youtube : {data.live_streaming.youtube}</p>
+                    {data.live_streaming.instagram && <p>Instagram : {data.live_streaming.instagram}</p>}
+                    {data.live_streaming.tiktok && <p>TikTok : {data.live_streaming.tiktok}</p>}
+                    {data.live_streaming.youtube && <p>Youtube : {data.live_streaming.youtube}</p>}
                 </div>
             </div>
         </section>

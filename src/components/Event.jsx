@@ -45,11 +45,30 @@ export default function Event({ data }) {
 
             {/* Bottom Light Section */}
             <div className="bg-wave-pattern relative z-10 px-6 pb-20 pt-10 -mt-24 text-center">
+                {/* Background Kubah Kanan */}
+                <img src={data.assets.bgCover} alt="bg-city" className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-[180%] md:w-[120%] opacity-50 z-0 object-cover pointer-events-none mix-blend-multiply" />
+                <div className="absolute inset-x-0 top-0 h-48 bg-gradient-to-b from-[#f8f9fa] to-transparent z-0 pointer-events-none"></div>
+                <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-[#f8f9fa] to-transparent z-0 pointer-events-none"></div>
+                
                 <img src={data.assets.bgMountain} alt="bg-mountain" className="absolute top-20 left-0 w-full opacity-40 pointer-events-none" />
 
                 {/* Card Akad */}
-                <div data-aos="fade-up" className="bg-white/95 backdrop-blur-sm text-navy rounded-[2.5rem] p-10 mb-12 relative z-20 shadow-xl border border-white/80">
-                    <h3 className="font-serif text-4xl text-gold uppercase tracking-widest relative">
+                <div data-aos="fade-up" className="bg-white/95 backdrop-blur-sm text-navy rounded-[2.5rem] p-10 mb-12 relative z-20 shadow-xl border border-white/80 overflow-hidden">
+                    {/* Ornaments */}
+                    {data.assets.ornamentCloud && (
+                        <>
+                            <img src={data.assets.ornamentCloud} alt="cloud" className="absolute -top-8 -left-8 w-32 h-32 object-contain opacity-70 mix-blend-multiply pointer-events-none scale-y-[-1]" />
+                            <img src={data.assets.ornamentCloud} alt="cloud" className="absolute -top-8 -right-8 w-32 h-32 object-contain opacity-70 mix-blend-multiply scale-x-[-1] scale-y-[-1] pointer-events-none" />
+                        </>
+                    )}
+                    {data.assets.ornamentPine && (
+                        <>
+                            <img src={data.assets.ornamentPine} alt="pine" className="absolute -bottom-4 -left-6 w-24 h-32 object-contain opacity-80 mix-blend-multiply pointer-events-none" />
+                            <img src={data.assets.ornamentPine} alt="pine" className="absolute -bottom-4 -right-6 w-24 h-32 object-contain opacity-80 mix-blend-multiply scale-x-[-1] pointer-events-none" />
+                        </>
+                    )}
+                    
+                    <h3 className="font-serif text-4xl text-gold uppercase tracking-widest relative z-10">
                         AKAD
                         <span className="font-script text-navy text-6xl lowercase absolute -bottom-10 left-1/2 transform -translate-x-1/2">Nikah</span>
                     </h3>
@@ -73,8 +92,22 @@ export default function Event({ data }) {
                 </div>
 
                 {/* Card Resepsi */}
-                <div data-aos="fade-up" className="bg-white/95 backdrop-blur-sm text-navy rounded-[2.5rem] p-10 mb-12 relative z-20 shadow-xl border border-white/80">
-                    <h3 className="font-serif text-4xl text-gold uppercase tracking-widest relative">
+                <div data-aos="fade-up" className="bg-white/95 backdrop-blur-sm text-navy rounded-[2.5rem] p-10 mb-12 relative z-20 shadow-xl border border-white/80 overflow-hidden">
+                    {/* Ornaments */}
+                    {data.assets.ornamentCloud && (
+                        <>
+                            <img src={data.assets.ornamentCloud} alt="cloud" className="absolute -top-8 -left-8 w-32 h-32 object-contain opacity-70 mix-blend-multiply pointer-events-none scale-y-[-1]" />
+                            <img src={data.assets.ornamentCloud} alt="cloud" className="absolute -top-8 -right-8 w-32 h-32 object-contain opacity-70 mix-blend-multiply scale-x-[-1] scale-y-[-1] pointer-events-none" />
+                        </>
+                    )}
+                    {data.assets.ornamentPine && (
+                        <>
+                            <img src={data.assets.ornamentPine} alt="pine" className="absolute -bottom-4 -left-6 w-24 h-32 object-contain opacity-80 mix-blend-multiply pointer-events-none" />
+                            <img src={data.assets.ornamentPine} alt="pine" className="absolute -bottom-4 -right-6 w-24 h-32 object-contain opacity-80 mix-blend-multiply scale-x-[-1] pointer-events-none" />
+                        </>
+                    )}
+
+                    <h3 className="font-serif text-4xl text-gold uppercase tracking-widest relative z-10">
                         RESEPSI
                         <span className="font-script text-navy text-6xl lowercase absolute -bottom-10 left-1/2 transform -translate-x-1/2">Nikah</span>
                     </h3>

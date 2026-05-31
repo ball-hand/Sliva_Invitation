@@ -7,13 +7,13 @@
             "nama_lengkap": "Silva Putri Fadila Nugraha",
             "orangtua": "Putri dari<br/>Bpk. Ucu Nugraha & Ibu Nining Ratna Ningsih",
             "instagram": "@silvanugraha",
-            "foto": "/assets/photo_bride_1780203104338.png"
+            "foto": "/assets/cust/WhatsApp Image 2026-05-31 at 15.26.14.jpeg"
         },
         "pria": {
             "nama_lengkap": "Maulana Sidik",
             "orangtua": "Putra dari<br/>Bpk. Rohana Anwar & Ibu Nining Karmini",
             "instagram": "@maulanasidik",
-            "foto": "/assets/photo_groom_1780203119345.png"
+            "foto": "/assets/cust/WhatsApp Image 2026-05-31 at 15.26.14 (1).jpeg"
         }
     },
     "acara": {
@@ -63,11 +63,15 @@
     "live_streaming": {
         "title": "Temui kami secara virtual untuk menyaksikan acara pernikahan kami yang insyaaAllah akan disiarkan langsung melalui akun instagram kami berikut ini.",
         "instagram": "@silva_maul",
-        "tiktok": "@silvamaul",
-        "youtube": "silvamaul",
-        "link_live": "#"
+        "tiktok": "",
+        "youtube": "",
+        "link_live": ""
     },
-    "music": "/assets/Nyoman Paul, Andi Rianto  The Way You Look At Me (Official Music Video).mp3",
+    "music": "/assets/music/Nyoman Paul, Andi Rianto  The Way You Look At Me (Official Music Video).mp3",
+    "music_config": {
+        "start": 181,
+        "end": 252.934966
+    },
     "quotes": "Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung dan merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa kasih dan sayang. Sungguh, pada yang demikian itu benar-benar terdapat tanda-tanda (kebesaran Allah) bagi kaum yang berpikir.\n\n~ Ar - Rum:21 ~",
     "galeri": [
         {
@@ -85,12 +89,49 @@
         {
             "src": "/assets/cust/WhatsApp Image 2026-05-31 at 13.39.23.jpeg",
             "alt": "foto galeri 4"
+        },
+        {
+            "src": "/assets/cust/WhatsApp Image 2026-05-31 at 14.36.44.jpeg",
+            "alt": "foto galeri baru"
+        },
+        {
+            "src": "/assets/cust/WhatsApp Image 2026-05-31 at 14.36.43.jpeg",
+            "alt": "foto galeri baru"
+        },
+        {
+            "src": "/assets/cust/WhatsApp Image 2026-05-31 at 14.36.42.jpeg",
+            "alt": "foto galeri baru"
+        },
+        {
+            "src": "/assets/cust/WhatsApp Image 2026-05-31 at 14.36.41.jpeg",
+            "alt": "foto galeri baru"
         }
     ],
     "assets": {
         "cover": "/assets/cust/WhatsApp Image 2026-05-31 at 13.39.21.jpeg",
         "hero": "/assets/cust/WhatsApp Image 2026-05-31 at 14.36.42.jpeg",
-        "bgCity": "/assets/bg_city_watercolor_1780203018528.png",
-        "bgMountain": "/assets/bg_mountain_watercolor_1780203042967.png"
+        "bgCity": "/assets/art/bg_city_watercolor_1780203018528.png",
+        "bgCover": "/assets/art/bg_city_watercolor_kubah_kanan.jpg",
+        "bgProfile": "/assets/art/bg_city_watercolor_tower_and_bridge.jpg",
+        "bgMountain": "/assets/art/bg_mountain_watercolor_1780203042967.png",
+        "bgAbstract": "/assets/art/image.png",
+        "ornamentCloud": "/assets/art/ornamen pjok bawa kiri.png",
+        "ornamentPine": "/assets/art/ornamen pjok bawa kiri.png"
+    },
+    "wedding_gift": [
+        {
+            "bank": "Seabank ",
+            "account_number": "901135154221",
+            "account_name": "Silva Putri Fadila Nugrahak"
+        },
+        {
+            "bank": "Dana",
+            "account_number": "083162116318",
+            "account_name": "Maulana Sidik"
+        }
+    ],
+    "maps": {
+        "iframe_url": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.0309138963335!2d108.10709759999999!3d-7.350425200000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6f545acda455eb%3A0x21d154e4dea9ff9c!2sKenobi%20Cell!5e0!3m2!1sid!2sid!4v1780218013697!5m2!1sid!2sid\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>",
+        "link_url": "https://maps.app.goo.gl/1SFg9ZQ6e6itszq96"
     }
 }

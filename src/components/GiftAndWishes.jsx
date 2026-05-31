@@ -97,41 +97,77 @@ export default function GiftAndWishes({ data }) {
 
     const handleCopy = (text) => {
         navigator.clipboard.writeText(text);
-        setCopied(true);
+        setCopied(text);
         setTimeout(() => setCopied(false), 2000);
     };
 
     return (
         <section id="ucapan" className="py-24 px-6 bg-wave-pattern text-center relative overflow-hidden">
-            <img src={data.assets.bgMountain} alt="bg-mountain" className="absolute inset-0 w-full h-full object-cover opacity-20 pointer-events-none" />
+            {/* Background City */}
+            <img src={data.assets.bgCity} alt="bg-city" className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-[180%] md:w-[120%] opacity-50 z-0 object-cover pointer-events-none mix-blend-multiply" />
+            <div className="absolute inset-x-0 top-0 h-48 bg-gradient-to-b from-[#f8f9fa] to-transparent z-0 pointer-events-none"></div>
+            <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-[#f8f9fa] to-transparent z-0 pointer-events-none"></div>
             
             {/* Wedding Gift */}
-            <div data-aos="fade-up" className="bg-white/95 backdrop-blur-sm rounded-3xl p-8 mb-12 relative z-10 shadow-2xl border border-white/50">
-                <h2 className="font-script text-6xl text-gold mb-4">Wedding Gift</h2>
+            <div data-aos="fade-up" className="bg-white/95 backdrop-blur-sm rounded-3xl p-8 mb-12 relative z-10 shadow-2xl border border-white/50 overflow-hidden">
+                {/* Ornaments */}
+                {data.assets?.ornamentCloud && (
+                    <>
+                        <img src={data.assets.ornamentCloud} alt="cloud" className="absolute -top-8 -left-8 w-32 h-32 object-contain opacity-70 mix-blend-multiply pointer-events-none scale-y-[-1]" />
+                        <img src={data.assets.ornamentCloud} alt="cloud" className="absolute -top-8 -right-8 w-32 h-32 object-contain opacity-70 mix-blend-multiply scale-x-[-1] scale-y-[-1] pointer-events-none" />
+                    </>
+                )}
+                {data.assets?.ornamentPine && (
+                    <>
+                        <img src={data.assets.ornamentPine} alt="pine" className="absolute -bottom-4 -left-6 w-24 h-32 object-contain opacity-80 mix-blend-multiply pointer-events-none" />
+                        <img src={data.assets.ornamentPine} alt="pine" className="absolute -bottom-4 -right-6 w-24 h-32 object-contain opacity-80 mix-blend-multiply scale-x-[-1] pointer-events-none" />
+                    </>
+                )}
+                
+                <h2 className="font-script text-6xl text-gold mb-4 relative z-10">Wedding Gift</h2>
                 <p className="font-serif text-xs leading-relaxed text-navy italic mb-8 px-2">
                     Doa Restu Anda merupakan karunia yang sangat berarti bagi kami. Dan jika memberi adalah ungkapan tanda kasih Anda, Anda dapat memberi kado secara cashless.
                 </p>
 
-                {/* Account 1 */}
-                <div className="bg-gray-100 rounded-2xl p-6 mb-4 flex flex-col items-center border border-gray-200">
-                    <h3 className="font-bold text-navy text-sm mb-2 uppercase tracking-wider">Dana</h3>
-                    <p className="text-xl font-mono text-gray-700 tracking-widest mb-1">081234567890</p>
-                    <p className="text-xs text-gray-500 mb-4 font-serif">a.n Silva Putri</p>
-                    <button 
-                        onClick={() => handleCopy('081234567890')}
-                        className="bg-navy text-white text-[10px] px-4 py-2 rounded-full hover:bg-opacity-90 transition flex items-center gap-2"
-                    >
-                        <Copy size={12} /> {copied ? 'Tersalin!' : 'Salin No. Rekening'}
-                    </button>
+                {/* Dynamic Wedding Gifts */}
+                <div className="space-y-4 mb-4">
+                    {(data.wedding_gift || []).map((gift, idx) => (
+                        <div key={idx} className="bg-gray-100 rounded-2xl p-6 flex flex-col items-center border border-gray-200">
+                            <h3 className="font-bold text-navy text-sm mb-2 uppercase tracking-wider">{gift.bank}</h3>
+                            <p className="text-xl font-mono text-gray-700 tracking-widest mb-1">{gift.account_number}</p>
+                            <p className="text-xs text-gray-500 mb-4 font-serif">{gift.account_name}</p>
+                            <button 
+                                onClick={() => handleCopy(gift.account_number)}
+                                className="bg-navy text-white text-[10px] px-4 py-2 rounded-full hover:bg-opacity-90 transition flex items-center gap-2"
+                            >
+                                <Copy size={12} /> {copied === gift.account_number ? 'Tersalin!' : 'Salin No. Rekening'}
+                            </button>
+                        </div>
+                    ))}
                 </div>
             </div>
 
             {/* Ucapan & Doa */}
-            <div data-aos="fade-up" className="bg-white/95 backdrop-blur-sm rounded-3xl p-8 relative z-10 shadow-2xl border border-white/50 text-left">
-                 <h2 className="font-serif text-3xl text-gold mb-2 uppercase text-center">UCAPAN<br/><span className="font-script text-navy text-5xl lowercase">& Doa</span></h2>
-                 <p className="font-serif text-xs leading-relaxed text-navy italic mb-8 px-2 font-bold text-center">
-                    Berikan ucapan dan do'a kepada mempelai
-                 </p>
+            <div data-aos="fade-up" className="bg-white/95 backdrop-blur-sm rounded-3xl p-8 relative z-10 shadow-2xl border border-white/50 text-left overflow-hidden">
+                 {/* Ornaments */}
+                 {data.assets?.ornamentCloud && (
+                     <>
+                         <img src={data.assets.ornamentCloud} alt="cloud" className="absolute -top-8 -left-8 w-32 h-32 object-contain opacity-70 mix-blend-multiply pointer-events-none scale-y-[-1]" />
+                         <img src={data.assets.ornamentCloud} alt="cloud" className="absolute -top-8 -right-8 w-32 h-32 object-contain opacity-70 mix-blend-multiply scale-x-[-1] scale-y-[-1] pointer-events-none" />
+                     </>
+                 )}
+                 {data.assets?.ornamentPine && (
+                     <>
+                         <img src={data.assets.ornamentPine} alt="pine" className="absolute -bottom-4 -left-6 w-24 h-32 object-contain opacity-80 mix-blend-multiply pointer-events-none" />
+                         <img src={data.assets.ornamentPine} alt="pine" className="absolute -bottom-4 -right-6 w-24 h-32 object-contain opacity-80 mix-blend-multiply scale-x-[-1] pointer-events-none" />
+                     </>
+                 )}
+
+                 <div className="relative z-10">
+                     <h2 className="font-serif text-3xl text-gold mb-2 uppercase text-center">UCAPAN<br/><span className="font-script text-navy text-5xl lowercase">& Doa</span></h2>
+                     <p className="font-serif text-xs leading-relaxed text-navy italic mb-8 px-2 font-bold text-center">
+                        Berikan ucapan dan do'a kepada mempelai
+                     </p>
 
                  {/* Form */}
                  <form onSubmit={handleSubmit} className="space-y-4 mb-8">
@@ -198,6 +234,7 @@ export default function GiftAndWishes({ data }) {
                              </div>
                          ))}
                      </div>
+                 </div>
                  </div>
             </div>
         </section>

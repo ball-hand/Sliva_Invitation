@@ -30,7 +30,7 @@ export default function BottomNav() {
     ];
 
     return (
-        <nav className="fixed bottom-6 left-1/2 transform -translate-x-1/2 bg-white/80 backdrop-blur-md px-6 py-3 rounded-2xl shadow-xl z-40 flex gap-4 w-[90%] max-w-[400px] justify-between border border-white/50">
+        <nav className="fixed bottom-6 left-1/2 transform -translate-x-1/2 bg-white/80 backdrop-blur-md px-6 py-3 rounded-2xl shadow-xl z-[60] flex gap-4 w-[90%] max-w-[400px] justify-between border border-white/50">
             {navItems.map(item => (
                 <a 
                     key={item.id}

@@ -7,11 +7,44 @@ export default function MusicPlayer({ data, isCoverOpen }) {
     // Auto-play when cover is opened
     useEffect(() => {
         if (isCoverOpen && audioRef.current) {
+            // Set titik awal (start)
+            if (data.music_config?.start > 0 && audioRef.current.currentTime === 0) {
+                audioRef.current.currentTime = data.music_config.start;
+            }
+            
             audioRef.current.play().then(() => {
                 setIsPlaying(true);
             }).catch(e => console.log("Auto-play prevented", e));
         }
     }, [isCoverOpen]);
+
+    // Custom Trimmer Loop Logic
+    useEffect(() => {
+        const audio = audioRef.current;
+        if (!audio) return;
+
+        const start = data.music_config?.start || 0;
+        const end = data.music_config?.end || 0;
+
+        const handleTimeUpdate = () => {
+            if (end > 0 && audio.currentTime >= end) {
+                audio.currentTime = start;
+            }
+        };
+
+        const handleEnded = () => {
+            audio.currentTime = start;
+            audio.play();
+        };
+
+        audio.addEventListener('timeupdate', handleTimeUpdate);
+        audio.addEventListener('ended', handleEnded);
+        
+        return () => {
+            audio.removeEventListener('timeupdate', handleTimeUpdate);
+            audio.removeEventListener('ended', handleEnded);
+        };
+    }, [data.music_config]);
 
     const togglePlay = () => {
         if (isPlaying) {
@@ -26,7 +59,7 @@ export default function MusicPlayer({ data, isCoverOpen }) {
 
     return (
         <div className={`fixed bottom-24 right-4 z-50 transition-opacity duration-1000 ${isCoverOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
-            <audio ref={audioRef} src={data.music} loop />
+            <audio ref={audioRef} src={data.music} />
             <button 
                 onClick={togglePlay}
                 className={`w-12 h-12 rounded-full bg-navy border-2 border-gold shadow-xl flex items-center justify-center text-white transition-transform ${isPlaying ? 'animate-[spin_4s_linear_infinite]' : ''}`}

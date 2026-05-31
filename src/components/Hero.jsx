@@ -24,7 +24,9 @@ export default function Hero({ data }) {
             </div>
             
             {/* City Background */}
-            <img src={data.assets.bgCity} alt="bg-city" className="absolute bottom-0 left-0 w-full opacity-70 z-10 object-cover pointer-events-none" style={{ mixBlendMode: 'multiply' }} />
+            <img src={data.assets.bgCover} alt="bg-city" className="absolute bottom-0 left-0 w-full opacity-50 z-10 object-cover pointer-events-none" style={{ mixBlendMode: 'multiply' }} />
+            <div className="absolute inset-x-0 top-0 h-48 bg-gradient-to-b from-white to-transparent z-10 pointer-events-none"></div>
+            <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-white to-transparent z-10 pointer-events-none"></div>
         </section>
     );
 }
